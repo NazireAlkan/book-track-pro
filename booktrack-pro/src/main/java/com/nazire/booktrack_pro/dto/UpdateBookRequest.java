@@ -1,4 +1,51 @@
 package com.nazire.booktrack_pro.dto;
 
+import jakarta.validation.constraints.*;
+
+/*
+Frontend'den gelen kitabı güncelleme isteğini
+karşılayan sınıf
+ */
 public class UpdateBookRequest {
+
+    @NotBlank @Size(max = 200) private String title;
+
+    @NotBlank @Size(max = 120) private String author;
+
+    @NotBlank @Pattern(regexp = "^[0-9-] {10,17}$", message = "Invalid ISBN")
+    private String isbn;
+
+    @Min(1450) @Max(2025) private Integer publishedYear;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public Integer getPublishedYear() {
+        return publishedYear;
+    }
+
+    public void setPublishedYear(Integer publishedYear) {
+        this.publishedYear = publishedYear;
+    }
 }

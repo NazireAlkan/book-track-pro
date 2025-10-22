@@ -1,5 +1,6 @@
 package com.nazire.booktrack_pro.domain;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
                 name ="uk_books_isbn", columnNames = "isbn"
         )
 )
-public class Book {
+public class BookEntity {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
@@ -22,6 +23,9 @@ public class Book {
             name = "book_seq_gen",      // java tarafındaki isim
             sequenceName = "book_seq",  //PostgreSQL'de oluşacak sequence adı
             allocationSize = 1          //her defasında 1 artsın
+    )
+    @Schema( // swagger kullanımı örnek deneme
+            description = "id of the book"
     )
     private Long id;
 

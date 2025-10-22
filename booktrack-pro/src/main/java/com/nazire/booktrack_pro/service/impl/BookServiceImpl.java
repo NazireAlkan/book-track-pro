@@ -1,4 +1,4 @@
-package com.nazire.booktrack_pro.service;
+package com.nazire.booktrack_pro.service.impl;
 
 import com.nazire.booktrack_pro.domain.BookEntity;
 import com.nazire.booktrack_pro.dto.BookResponse;
@@ -8,6 +8,7 @@ import com.nazire.booktrack_pro.exception.BadRequestException;
 import com.nazire.booktrack_pro.exception.NotFoundException;
 import com.nazire.booktrack_pro.mapper.BookMapper;
 import com.nazire.booktrack_pro.repository.BookRepository;
+import com.nazire.booktrack_pro.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
 
     private final BookRepository bookRepository;
 

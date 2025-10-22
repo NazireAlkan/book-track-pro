@@ -1,4 +1,9 @@
 package com.nazire.booktrack_pro.exception;
 
-public class NotFoundException {
+import jakarta.validation.constraints.NotNull;
+
+public class NotFoundException extends RuntimeException{
+    public NotFoundException(@NotNull String message) {
+        super(message);
+    }
 }
